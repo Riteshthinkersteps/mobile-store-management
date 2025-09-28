@@ -1,0 +1,29 @@
+<div>
+    <div   *ngIf="!showflag" class="gap-2 row">
+ <div *ngFor="let tab of tabs" class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 ">
+<div class="shadow-lg rounded-2xl p-4 bg-white w-100 ">
+    <div>
+        <img src="" alt="">
+    </div>
+   
+    <a [routerLink]="tab.path" (click)="show()" >{{ tab.label }}</a>
+  
+</div>
+</div>
+</div>
+</div>
+
+
+<div *ngIf="showflag" class="border rounded p-4 bg-white w-100 h-100 overflow-hidden">
+<div class="d-flex justify-content-end mb-0">
+    <button (click)="back()" class="btn btn-primary">Back</button>
+</div>
+
+<div>
+    <router-outlet>
+</router-outlet>
+</div>
+
+
+
+</div>

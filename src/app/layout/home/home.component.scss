@@ -1,0 +1,22 @@
+#wrapper {
+  min-height: 100vh;
+  display: flex;
+}
+
+/* Sidebar */
+#sidebar-wrapper {
+  width: 220px;
+  transition: all 0.3s;
+}
+#sidebar-wrapper .list-group-item {
+  border: none;
+  padding: 12px 20px;
+}
+#sidebar-wrapper .list-group-item:hover {
+  background: #495057;
+}
+
+/* Page Content */
+#page-content-wrapper {
+  flex-grow: 1;
+}
