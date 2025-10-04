@@ -2,9 +2,8 @@
   <img *ngIf="image" [src]="image" alt="card image" class="card-img">
   <div class="card-body"  (click)="navigate()">
     <h3>{{ title }}</h3>
-    <p *ngIf="subtitle">{{ subtitle }}</p>
+    <p class="text-truncate" *ngIf="subtitle">{{ subtitle }}</p>
     <p >{{price}}</p>
-   [ route] = route
     <ng-content></ng-content> 
   </div>
 </div>
