@@ -1,10 +1,10 @@
 export enum Storagekey {
-  SelectedProductTitle ="selectedProductTitle"
+  SelectedProductTitle = "selectedProductTitle"
 }
 export interface Product {
-  productName:string;
-  models:ProductModal[];
- 
+  productName: string;
+  models: ProductModal[];
+
 }
 export interface ProductModal {
   id: number
@@ -12,13 +12,13 @@ export interface ProductModal {
   description: string;
   variant?: string;
   image: string;
-  category:string;
+  category: string;
 }
 
 export enum ProductTypeEnum {
   Accessories = 'Accessories',
   Products = 'Products',
-  Spearpart = 'Spearpart', 
+  Spearpart = 'Spearpart',
 
 }
 

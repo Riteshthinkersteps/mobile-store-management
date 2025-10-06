@@ -6,9 +6,7 @@ import { Injectable } from '@angular/core';
 export class StorageService {
 
   constructor() { }
-
-
-  private memoryStore = new Map<string, any>(); 
+  private memoryStore = new Map<string, any>();
 
   setItem(key: string, value: any, useLocalStorage: boolean = false): void {
     if (useLocalStorage) {
@@ -21,7 +19,6 @@ export class StorageService {
       this.memoryStore.set(key, value);
     }
   }
-
 
   getItem(key: string, useLocalStorage: boolean = false): any {
     if (useLocalStorage) {
@@ -46,9 +43,4 @@ export class StorageService {
     }
   }
 
-
 }
-
-
-
-  

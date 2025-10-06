@@ -5,17 +5,12 @@ import { ProductDetailsComponent } from './pages/product-details/product-details
 import { RouterModule } from '@angular/router';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreRoutingModule } from './store-routing.module.ts.component.module';
-import { SalesComponent } from '../sales/sales/sales.component';
-import { AccessoriesComponent } from '../sales/accessories/accessories.component';
-import { RechargeComponent } from '../sales/recharge/recharge.component';
-
-
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailsComponent,
-    
+
   ],
   imports: [
     CommonModule,
@@ -23,7 +18,7 @@ import { RechargeComponent } from '../sales/recharge/recharge.component';
     StoreRoutingModule,
     SharedModule,
   ],
- 
-  
+
+
 })
 export class StoreModule { }

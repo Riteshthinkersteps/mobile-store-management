@@ -26,12 +26,12 @@ import { CardComponent } from './components/common_card/card.component';
     DropdownComponent,
     SidebarComponent,
     CardComponent
-   
+
   ],
   imports: [
     CommonModule,
     RouterModule,
-    
+
   ],
   exports: [
     FooterComponent,

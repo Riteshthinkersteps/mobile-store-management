@@ -4,8 +4,8 @@ import { ProductListComponent } from './pages/product-list/product-list.componen
 
 const routes: Routes = [
   {
-    path: '',  component: ProductListComponent,
-    
+    path: '', component: ProductListComponent,
+
   }
 ];
 
@@ -13,4 +13,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class StoreRoutingModule {}
+export class StoreRoutingModule { }

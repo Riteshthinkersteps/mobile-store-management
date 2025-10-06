@@ -10,7 +10,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 
 @NgModule({
-   declarations: [
+  declarations: [
     SalesComponent,
     RechargeComponent,
     ProductComponent,
@@ -22,11 +22,11 @@ import { SharedModule } from 'src/app/shared/shared.module';
     SalesRoutingModule,
     SharedModule,
   ],
-  exports:[
+  exports: [
     SalesComponent,
     AccessoriesComponent,
     RechargeComponent
-    
+
   ]
 })
 export class SalesModule { }
