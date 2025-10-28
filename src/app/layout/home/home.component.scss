@@ -8,6 +8,8 @@
 #sidebar-wrapper {
   width: 12%;
   transition: all 0.3s;
+   background-color: rgb(105, 180, 247);
+
 }
 #sidebar-wrapper .list-group-item {
   border: none;
@@ -19,7 +21,7 @@
 
 /* Page Content */
 #page-content-wrapper {
-  width: 88%;
+  width: 100%;
 }
 
 .main_content{
@@ -27,3 +29,4 @@
 overflow-y: hidden;
  overflow-x: hidden;
 }
+

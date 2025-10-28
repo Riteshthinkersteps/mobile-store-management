@@ -1,9 +1,9 @@
 <div class="container mt-4">
   <h2 class="mb-4">📊 Dashboard</h2>
 
-  <div class="row g-4" (click)="topage('sales')">
+  <div class="row g-4" >
     <!-- Sales Card -->
-    <div class="col-md-3" >
+    <div class="col-md-3"  (click)="topage('sales')">
       <div class="card shadow-sm border-0 text-center p-3">
         <h5>Sales</h5>
         <p class="display-6 text-success">120</p>
@@ -11,7 +11,7 @@
     </div>
 
     <!-- Purchases Card -->
-    <div class="col-md-3">
+    <div class="col-md-3"(click)="topage('purchase')">
       <div class="card shadow-sm border-0 text-center p-3">
         <h5>Purchases</h5>
         <p class="display-6 text-primary">85</p>
@@ -19,7 +19,7 @@
     </div>
 
     <!-- Inventory Card -->
-    <div class="col-md-3">
+    <div class="col-md-3" (click)="topage('stock')">
       <div class="card shadow-sm border-0 text-center p-3">
         <h5>Inventory</h5>
         <p class="display-6 text-warning">340</p>
@@ -27,14 +27,13 @@
     </div>
 
     <!-- Reports Card -->
-    <div class="col-md-3">
+    <div class="col-md-3" (click)="topage('reports')">
       <div class="card shadow-sm border-0 text-center p-3">
         <h5>Reports</h5>
         <p class="display-6 text-danger">📑</p>
       </div>
     </div>
   </div>
-  <app-recharge></app-recharge>
 
   <!-- Recent Sales Table -->
   <div class="card shadow-sm border-0 mt-5">

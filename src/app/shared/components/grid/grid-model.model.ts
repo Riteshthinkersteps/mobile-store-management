@@ -1,5 +1,5 @@
 export interface GridModel {
-     columns: GridColumn[];
+  columns: GridColumn[];
   rowData: any;
   pagination?: boolean;
   pageSize?: number;

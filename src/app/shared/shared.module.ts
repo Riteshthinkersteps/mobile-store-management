@@ -13,6 +13,14 @@ import { RouterModule } from '@angular/router';
 import { CardComponent } from './components/common_card/card.component';
 import { GridComponent } from './components/grid/grid.component';
 import { AgGridModule } from 'ag-grid-angular';
+import { AddItemsPageComponent } from './components/add-items-page/add-items-page.component';
+import { ButtonComponent } from './components/button/button.component';
+import { FormsModule } from '@angular/forms';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { ProductComponent } from '../features/sales/product/product.component';
+import { ChartOptionsComponent } from './components/chart-options/chart-options';
+import { ReportsModule } from '../features/reports/reports.module';
+import { DatePickerComponent } from './components/date-picker/date-picker.component';
 
 
 
@@ -29,17 +37,31 @@ import { AgGridModule } from 'ag-grid-angular';
     SidebarComponent,
     CardComponent,
     GridComponent,
+    AddItemsPageComponent,
+    ButtonComponent,
+    ProductComponent,
+    ChartOptionsComponent,
+    DatePickerComponent,
+    
   ],
   imports: [
     CommonModule,
     RouterModule,
-    AgGridModule
+    AgGridModule,
+    FormsModule,
+     NgxDropzoneModule,
+
      ],
   exports: [
     FooterComponent,
     SidebarComponent,
     CardComponent,
-    GridComponent
+    GridComponent,
+    InputComponent,
+    ButtonComponent,
+    ChartOptionsComponent,
+    ReportsModule
+    
 
   ]
 })

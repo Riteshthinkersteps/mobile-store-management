@@ -4,6 +4,7 @@ import { HomeComponent } from './layout/home/home.component';
 import { DashboardComponent } from './features/dashboard/dashboard.component';
 import { SalesComponent } from './features/sales/sales/sales.component';
 import { PurchaseListComponent } from './features/stock/pages/purchase-list/purchase-list.component';
+import { ProductComponent } from './features/sales/product/product.component';
 
 const routes: Routes = [
   {
@@ -14,7 +15,7 @@ const routes: Routes = [
       { path: 'dashboard', component: DashboardComponent },
       { path: 'sales', loadChildren: () => import('./features/sales/sales.module').then(m => m.SalesModule) },
       { path: 'stock', loadChildren: () => import('./features/stock/stock.module').then(m => m.StockModule) },
-
+      {path:'purchase',component:ProductComponent}
     ]
   },
   { path: 'cart', loadChildren: () => import('./features/cart/cart.module').then(m => m.CartModule) },
@@ -25,7 +26,6 @@ const routes: Routes = [
   { path: 'repairs', loadChildren: () => import('./features/repairs/repairs.module').then(m => m.RepairsModule) },
   { path: 'recharges', loadChildren: () => import('./features/recharges/recharges.module').then(m => m.RechargesModule) },
   { path: 'stock', loadChildren: () => import('./features/stock/stock.module').then(m => m.StockModule) },
-  { path: 'reports', loadChildren: () => import('./features/reports/reports.module').then(m => m.ReportsModule) },
   { path: 'notifications', loadChildren: () => import('./features/notifications/notifications.module').then(m => m.NotificationsModule) },
   { path: 'users', loadChildren: () => import('./features/users/users.module').then(m => m.UsersModule) },
 ];

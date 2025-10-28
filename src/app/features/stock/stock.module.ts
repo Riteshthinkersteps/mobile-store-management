@@ -6,6 +6,7 @@ import { StockRoutingModule } from './stock-routing.module';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { StoreModule } from '../store/store.module';
 import { AccessoriesComponent } from '../sales/accessories/accessories.component';
+import { ReportsModule } from '../reports/reports.module';
 
 
 
@@ -20,7 +21,8 @@ import { AccessoriesComponent } from '../sales/accessories/accessories.component
     CommonModule,
     StockRoutingModule,
     SharedModule,
-    StoreModule
+    StoreModule,
+    ReportsModule
 ],
   exports: [
     PurchaseListComponent,

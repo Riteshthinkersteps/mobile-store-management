@@ -1,6 +1,7 @@
 import { Component, } from '@angular/core';
 import { sellingItemsGrid } from './salling-details-dashboard.module';
 import { GridReadyEvent } from 'ag-grid-community';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-salling-details-dashboard',
@@ -8,16 +9,21 @@ import { GridReadyEvent } from 'ag-grid-community';
   styleUrls: ['./salling-details-dashboard.component.scss']
 })
 export class SallingDetailsDashboardComponent {
-
+ constructor(private route: ActivatedRoute) {}
   private gridApi: any;
-   onGridReady(event: GridReadyEvent) {
-    this.gridApi = event.api;
-    console.log('Grid ready in parent');
-    this.gridApi.sizeColumnsToFit();
-
-   
+  filteredData:any [] = [];
+  gridData :any = sellingItemsGrid;
+   ngOnInit() { 
+    this.route.params.subscribe(params => {
+      const category = params['category']; 
+      this.filteredData = this.gridData.rowData.filter((row: any) => row.category === category);
+      console.log(this.filteredData)
+      if (this.filteredData) {
+        this.gridApi.setRowData(this.filteredData);
+      }
+    });
   }
-    gridData :any = sellingItemsGrid;
+
   onMobileClick(event: any) {
     console.log('Row clicked:', event);
   }

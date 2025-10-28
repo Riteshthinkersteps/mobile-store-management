@@ -1,8 +1,9 @@
 import { Component, EventEmitter, Input, Output, SimpleChanges } from '@angular/core';
-import { ModuleRegistry, AllCommunityModule } from 'ag-grid-community';
+import { ModuleRegistry } from 'ag-grid-community';
+import { ClientSideRowModelModule } from 'ag-grid-community';
+import { GridModel } from './grid-model.model';
 
-
-ModuleRegistry.registerModules([AllCommunityModule]);
+ModuleRegistry.registerModules([ClientSideRowModelModule]);
 
 @Component({
   selector: 'app-grid',
@@ -10,25 +11,27 @@ ModuleRegistry.registerModules([AllCommunityModule]);
   styleUrls: ['./grid.component.scss']
 })
 export class GridComponent {
- @Input() rowData: any[] = [];
-   @Input() dataModel: any;
-  @Output() rowClicked = new EventEmitter<any>();
+  @Input() rowData: any[] = [];
+  @Input() dataModel!: GridModel;
 
+  @Output() rowClicked = new EventEmitter<any>();
+  @Output() gridReadyEvent = new EventEmitter<any>();
+
+  columnDefs: any[] = [];
   pagination = true;
   paginationPageSize = 10;
-  @Output() gridReadyEvent = new EventEmitter<any>();
-  columnDefs: any;
-
 
   ngOnChanges(changes: SimpleChanges) {
     if (changes['dataModel'] && this.dataModel) {
-      this.rowData = this.dataModel.rowData || [];
       this.columnDefs = this.dataModel.columns || [];
       this.pagination = this.dataModel.pagination ?? true;
-      this.paginationPageSize = this.dataModel.pageSize ?? 100;
+      this.paginationPageSize = this.dataModel.pageSize ?? 10;
+      console.log('columnDefs:', this.columnDefs);
+    console.log('rowData:', this.rowData);
     }
   }
+
   rowclick(arg: any) {
-    this.rowClicked.emit(arg); 
+    this.rowClicked.emit(arg);
   }
 }

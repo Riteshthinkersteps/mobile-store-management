@@ -9,7 +9,9 @@ import { ReportDashboardComponent } from './pages/report-dashboard/report-dashbo
     ReportDashboardComponent
   ],
   imports: [
-    CommonModule
-  ]
+    CommonModule,
+    
+  ],
+  exports:[ReportDashboardComponent]
 })
 export class ReportsModule { }

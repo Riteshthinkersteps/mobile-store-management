@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { Product, PRODUCT_CATEGORIES, ProductCategory, ProductModal, ProductTypeEnum, Storagekey } from './product.model';
 import { StorageService } from 'src/app/shared/storage.service';
+import { CommonServiceTsService } from 'src/app/common.service.ts.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -14,7 +16,7 @@ export class ProductListComponent {
 
   etcdata: any;
   title: any;
-  constructor(public storageService: StorageService) { }
+  constructor(public storageService: StorageService,private sellingService:CommonServiceTsService, private router:Router ) { }
   ngOnInit(): void {
     var titalname = this.storageService.getItem(Storagekey.SelectedProductTitle, true,)
     const data = PRODUCT_CATEGORIES.find((cat) => cat.category === ProductTypeEnum.Accessories);
@@ -23,6 +25,10 @@ export class ProductListComponent {
       console.log(this.productlist)
     }
 
+  }
+  onSale(data:any){
+    this.sellingService.setdata(data)
+    this.router.navigate(['/stock/reports']);
   }
 
 }
